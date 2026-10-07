@@ -1,0 +1,5 @@
+{% extends 'core/base.html' %}{% block content %}<section><div class="wrap" style="max-width:560px"><h2 style="font-size:36px;margin-bottom:24px">{{ title }}</h2>
+<form method="post" {% if multipart %}enctype="multipart/form-data"{% endif %}>{% csrf_token %}{{ form.as_p }}<button class="btn btn-primary">{{ button }}</button></form>
+{% if title == 'Log in' %}<p style="margin-top:16px;font-size:14px"><a href="{% url 'password_reset' %}">Forgot password?</a> · <a href="{% url 'signup' %}">Create account</a></p>{% endif %}
+{% if rec %}<div class="box" style="margin-top:24px"><b>Your match</b><p>Plan: <b>{{ rec.plan.name }}</b> · Class: <b>{{ rec.class }}</b>{% if rec.trainer %} · Trainer: <b>{{ rec.trainer.name }}</b>{% endif %}</p><a class="btn btn-primary btn-sm" href="{% url 'plans' %}">See plans</a></div>{% endif %}
+</div></section>{% endblock %}

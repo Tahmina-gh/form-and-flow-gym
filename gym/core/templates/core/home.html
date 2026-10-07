@@ -1,0 +1,175 @@
+{% extends 'core/base.html' %}
+{% block content %}
+
+<section class="hero" id="main">
+  <div class="hero-bg" aria-hidden="true">
+    <img class="hf1" src="https://picsum.photos/seed/formflow-hero1/1600/1200" alt="">
+    <img class="hf2" src="https://picsum.photos/seed/formflow-hero2/1600/1200" alt="">
+    <img class="hf3" src="https://picsum.photos/seed/formflow-hero3/1600/1200" alt="">
+  </div>
+  <div class="wrap">
+    <div class="eyebrow">A PRIVATE WELLNESS &amp; FITNESS STUDIO</div>
+    <h1>Move better.<br><em>Feel</em> stronger.</h1>
+    <p class="lead">A private space for strength, movement and wellbeing — designed for people who want results without the noise of a typical gym.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="{% url 'trial' %}">Book a Free Visit</a>
+      <a class="btn btn-outline" href="{% url 'classes' %}">Explore Classes</a>
+      <a class="link-arrow" href="{% url 'classes' %}">View Schedule →</a>
+    </div>
+    <div class="trust-row">
+      <div class="trust-card"><b>4.9/5</b><span>Member rating</span></div>
+      <div class="trust-card"><b>{{ member_count }}+</b><span>Active members</span></div>
+      <div class="trust-card"><b>{{ trainers|length }}</b><span>Expert coaches</span></div>
+    </div>
+  </div>
+  <div class="scroll-cue">Scroll<span class="dot"></span></div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>PILATES ✦ YOGA ✦ STRENGTH ✦ MOBILITY ✦ FUNCTIONAL TRAINING ✦ HIIT ✦ OPEN 6AM – 9PM ✦ PRIVATE COACHING ✦ </span>
+    <span>PILATES ✦ YOGA ✦ STRENGTH ✦ MOBILITY ✦ FUNCTIONAL TRAINING ✦ HIIT ✦ OPEN 6AM – 9PM ✦ PRIVATE COACHING ✦ </span>
+  </div>
+</div>
+
+<section style="padding:64px 0 24px;">
+  <div class="wrap">
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="26" height="26"><circle cx="12" cy="9" r="5"/><path d="M8.5 13.5L7 21l5-2.5L17 21l-1.5-7.5"/></svg></div>
+        <h3>Certified Coaches</h3>
+        <p>Every trainer is certified and coaches your form, not just your reps.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="26" height="26"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17.5" cy="9" r="2.2"/><path d="M15.3 20c0-2.6 1-4.6 2.5-5.7"/></svg></div>
+        <h3>Small Class Sizes</h3>
+        <p>Capped classes so you always get personal attention.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="26" height="26"><rect x="3" y="9" width="18" height="4"/><rect x="5" y="13" width="14" height="8"/><path d="M12 9v12"/><path d="M12 9c-1.4-3-5-4-5-1.3C7 9.2 9 9 12 9zM12 9c1.4-3 5-4 5-1.3C17 9.2 15 9 12 9z"/></svg></div>
+        <h3>Free First Visit</h3>
+        <p>Try a class or the studio on us before you commit to anything.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="26" height="26"><path d="M20 11A8 8 0 1 0 18.5 16"/><path d="M20 5v6h-6"/></svg></div>
+        <h3>Flexible Membership</h3>
+        <p>Pause or cancel anytime — no lock-in contracts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pull-quote">
+  <div class="wrap">
+    <p>This isn't a gym you survive. It's a studio you <em>return to</em>.</p>
+  </div>
+</section>
+
+<section id="paths">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow">PERSONALIZED FITNESS</div>
+      <h2>Fitness that fits <em>your life</em>.</h2>
+      <p>Three paths, each shaped around a different goal — or take the two-minute quiz and we'll match you to one.</p>
+    </div>
+    <div class="paths">
+      <div class="path-card"><div class="path-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="9" width="3" height="6" rx="1"/><rect x="19" y="9" width="3" height="6" rx="1"/><rect x="6" y="7" width="2.5" height="10" rx="1"/><rect x="15.5" y="7" width="2.5" height="10" rx="1"/><line x1="8.5" y1="12" x2="15.5" y2="12"/></svg></div><h3>Build Strength</h3><p>Improve strength and muscle with coached barbell and resistance work.</p><a href="{% url 'classes' %}?type=Strength">Explore →</a></div>
+      <div class="path-card"><div class="path-icon" style="background:var(--terracotta)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4" r="2"/><path d="M12 6v7M12 13l-5 5M12 13l5 5M9 9l3-1 3 1"/></svg></div><h3>Move &amp; Mobility</h3><p>Improve flexibility, joint health and everyday movement quality.</p><a href="{% url 'classes' %}?type=Mobility">Explore →</a></div>
+      <div class="path-card"><div class="path-icon" style="background:#B7A48C"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c8 0 14-6 14-14-8 0-14 6-14 14z"/><path d="M5 19c0-5 3-9 7-11"/></svg></div><h3>Reset &amp; Recover</h3><p>Recovery, stretching and wellness sessions to slow down and reset.</p><a href="{% url 'classes' %}?type=Yoga">Explore →</a></div>
+    </div>
+    <p style="text-align:center; margin-top:28px;"><a class="btn btn-outline" href="{% url 'quiz' %}">Not sure? Take the 1-minute quiz →</a></p>
+  </div>
+</section>
+
+<section id="booking" style="background:var(--beige)">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">CLASS BOOKING</div>
+      <h2>This week's <em>classes</em>.</h2>
+      <p>A live look at what's coming up — book straight from here, no account tricks required beyond logging in.</p>
+    </div>
+    <div class="class-grid">
+      {% for c in classes %}
+      <div class="class-card">
+        <div>
+          <h4>{{ c.name }}</h4>
+          <div class="class-meta">{{ c.trainer.name }} · {{ c.start|date:"D j M, H:i" }} · {{ c.duration_minutes }} min</div>
+          <span class="spots">{% if c.is_full %}FULLY BOOKED{% else %}{{ c.spots_left }} spots left{% endif %}</span>
+        </div>
+        {% if user.is_authenticated %}
+        <form method="post" action="{% url 'book' c.pk %}">{% csrf_token %}<input type="hidden" name="next" value="/">
+          <button class="btn btn-primary btn-sm">{% if c.is_full %}Join waitlist{% else %}Book Now{% endif %}</button>
+        </form>
+        {% else %}
+        <a class="btn btn-primary btn-sm" href="{% url 'login' %}?next={% url 'classes' %}">Book Now</a>
+        {% endif %}
+      </div>
+      {% empty %}<p>No upcoming classes yet — check back soon.</p>{% endfor %}
+    </div>
+    <p style="text-align:center; margin-top:24px;"><a class="btn btn-outline" href="{% url 'classes' %}">See the full schedule →</a></p>
+  </div>
+</section>
+
+<section id="membership">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow">MEMBERSHIP</div>
+      <h2>Simple, <em>premium</em> plans.</h2>
+      <p>Every plan includes full studio access during open hours.</p>
+    </div>
+    <div class="plans">
+      {% for p in plans %}
+      <div class="plan {% if p.featured %}featured{% endif %}">
+        {% if p.featured %}<div class="tag">Most loved</div>{% endif %}
+        <h3>{{ p.name }}</h3>
+        <div class="price">${{ p.price_monthly|floatformat:0 }}<small>/mo</small></div>
+        <ul>{% for b in p.benefit_list %}<li>{{ b }}</li>{% endfor %}</ul>
+        <a class="btn {% if p.featured %}btn-primary{% else %}btn-outline{% endif %}" href="{% url 'plans' %}" style="width:100%; text-align:center; display:block;">Choose {{ p.name }}</a>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="plan-note">No lock-in contracts · Pause anytime · Cancel in one click</p>
+  </div>
+</section>
+
+<section id="facility">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow">THE STUDIO</div>
+      <h2>A space designed to <em>slow you down</em>.</h2>
+    </div>
+    <div class="facility-grid">
+      <div class="facility-card"><img loading="lazy" src="https://picsum.photos/seed/formflow-studio/800/600" alt="Studio space"><span>Studio<span class="caption">Open-plan, light-filled, built for group and private sessions alike.</span></span></div>
+      <div class="facility-card"><img loading="lazy" src="https://picsum.photos/seed/formflow-strength/800/600" alt="Strength area"><span>Strength Area<span class="caption">Free weights and platforms, spaced so you're never waiting.</span></span></div>
+      <div class="facility-card"><img loading="lazy" src="https://picsum.photos/seed/formflow-recovery/800/600" alt="Recovery area"><span>Recovery Area<span class="caption">Stretch, breathe, and let your nervous system catch up.</span></span></div>
+      <div class="facility-card"><img loading="lazy" src="https://picsum.photos/seed/formflow-changing/800/600" alt="Changing rooms"><span>Changing Rooms<span class="caption">Quiet and unhurried, stocked with everything you forgot.</span></span></div>
+      <div class="facility-card"><img loading="lazy" src="https://picsum.photos/seed/formflow-relax/800/600" alt="Relaxation zone"><span>Relaxation Zone<span class="caption">Sit with a tea before or after — no one's rushing you out.</span></span></div>
+    </div>
+  </div>
+</section>
+
+{% if testimonials %}
+<section style="background:var(--beige)">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow">TESTIMONIALS</div>
+      <h2>From our <em>members</em>.</h2>
+    </div>
+    <div class="testi-grid">
+      {% for t in testimonials %}
+      <div class="testi"><p>"{{ t.quote }}"</p><div class="name">{{ t.name }} <span class="stars">{{ t.rating }}.0 ★</span></div></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section>
+  <div class="wrap">
+    <div class="cta-band">
+      <h2>Your body deserves <em>more</em> than a workout.</h2>
+      <a class="btn btn-outline" href="{% url 'trial' %}">Book Your First Session</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
